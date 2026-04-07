@@ -70,7 +70,7 @@ function HeroSection() {
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
-           className="flex flex-col items-start w-full md:w-[60%]"
+           className="flex flex-col items-start w-full md:w-[60%] -mt-20 md:mt-0"
         >
           {/* Badge */}
           <div className="inline-flex items-center border border-zinc-700/50 rounded-full px-4 py-1 mb-8">
