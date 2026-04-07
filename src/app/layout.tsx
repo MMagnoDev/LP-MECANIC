@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SN Master | Oficina Automotiva Premium",
+  title: "Oberg | Oficina Automotiva Premium",
   description: "Especialistas em manutenção preventiva e revisão de alto padrão.",
 };
 
