@@ -294,7 +294,7 @@ function GridSection() {
 
 function ExtendedPerformanceSection() {
   return (
-    <section id="specs" className="w-full bg-black py-24 md:py-32 relative z-20 border-t border-zinc-900">
+    <section id="specs" className="w-full bg-black pt-24 pb-12 md:py-32 relative z-20 border-t border-zinc-900">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
           <motion.div 
@@ -327,7 +327,7 @@ function ExtendedPerformanceSection() {
               Utilizamos dinamômetros de tração e equipamentos de correção para verificar falhas antes mesmo delas darem dores de cabeça na rua. 
             </p>
             
-            <MagneticButton className="self-start mt-8 text-sm font-bold uppercase tracking-widest text-zinc-100 bg-transparent border border-zinc-600 hover:bg-zinc-800 px-8 py-4 rounded-sm transition-colors">
+            <MagneticButton className="self-start mt-2 text-sm font-bold uppercase tracking-widest text-zinc-100 bg-transparent border border-zinc-600 hover:bg-zinc-800 px-8 py-4 rounded-sm transition-colors">
               Falar com Mecânico
             </MagneticButton>
           </motion.div>
@@ -339,7 +339,7 @@ function ExtendedPerformanceSection() {
 
 function LaboratorioSection() {
   return (
-    <section className="w-full bg-black py-24 md:py-32 relative z-20 overflow-hidden">
+    <section className="w-full bg-black pt-8 pb-8 md:py-32 relative z-20 overflow-hidden">
       <div className="max-w-[100vw] mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row gap-12 md:gap-16 justify-between max-w-7xl mx-auto relative">
           
@@ -348,7 +348,7 @@ function LaboratorioSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full md:w-1/3 flex flex-col justify-center sticky top-32 h-fit"
+            className="w-full md:w-1/3 flex flex-col justify-center md:sticky md:top-32 h-fit relative z-10"
           >
             <h2 className="text-4xl md:text-6xl font-medium tracking-tighter text-white mb-6">
               O Padrão <br/><span className="text-zinc-600">Cirúrgico.</span>
@@ -374,7 +374,7 @@ function LaboratorioSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-200px" }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="w-full md:w-2/3 h-[300px] md:h-[700px] relative rounded-sm overflow-hidden group"
+            className="w-full md:w-2/3 h-[55vw] min-h-[220px] md:h-[700px] relative rounded-sm overflow-hidden group"
           >
             <Image 
               src="/imagens/padrao-cirurgico.jpg" 
@@ -391,54 +391,89 @@ function LaboratorioSection() {
 }
 
 function ChassisSection() {
+  const cardContent = (
+    <>
+      <h2 className="text-3xl md:text-5xl font-medium tracking-tighter text-white mb-6">
+        Suspensão <br/><span className="text-zinc-500">e Freios.</span>
+      </h2>
+      <p className="text-zinc-400 text-lg leading-relaxed mb-10">
+        A segurança de condução é indispensável nas vias públicas. Realizamos troca técnica de fluidos e pastilhas originais de cerâmica com sangria profissional.
+      </p>
+      <ul className="flex flex-col gap-5 border-t border-zinc-900 pt-8">
+        <li className="flex justify-between items-center">
+          <span className="text-zinc-500 font-mono text-sm tracking-widest uppercase">Fluido</span>
+          <span className="text-white font-mono">Sangria Completa</span>
+        </li>
+        <li className="flex justify-between items-center">
+          <span className="text-zinc-500 font-mono text-sm tracking-widest uppercase">Reposição</span>
+          <span className="text-white font-mono">Linha Premium OEM</span>
+        </li>
+      </ul>
+    </>
+  );
+
   return (
-    <section className="w-full bg-black py-24 md:py-32 relative z-20">
+    <section className="w-full bg-black py-12 md:py-32 relative z-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-6 lg:gap-0 items-center">
-          
-          <motion.div 
+
+        {/* ── MOBILE: card acima, imagem abaixo ── */}
+        <div className="flex flex-col gap-6 lg:hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="bg-zinc-950 border border-zinc-800 p-8 rounded-sm shadow-2xl w-full"
+          >
+            {cardContent}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative h-[60vw] min-h-[240px] rounded-sm overflow-hidden group"
+          >
+            <Image
+              src="/assets/oberg_brakes_1775419566120.png"
+              fill
+              alt="Manutenção de Freios"
+              className="object-cover group-hover:scale-110 transition-transform duration-[5s] ease-out brightness-90 group-hover:brightness-100"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+          </motion.div>
+        </div>
+
+        {/* ── DESKTOP: imagem à esquerda sobreposta, card à direita ── */}
+        <div className="hidden lg:grid lg:grid-cols-[1.5fr_1fr] items-center">
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative h-[300px] md:h-[500px] lg:h-[700px] w-full lg:w-[110%] rounded-sm overflow-hidden z-10 group"
+            className="relative h-[700px] w-[110%] rounded-sm overflow-hidden z-10 group"
           >
-             <Image 
-              src="/assets/oberg_brakes_1775419566120.png" 
-              fill 
-              alt="Manutenção de Freios" 
-              className="object-cover group-hover:scale-110 transition-transform duration-[5s] ease-out brightness-75 group-hover:brightness-100" 
+            <Image
+              src="/assets/oberg_brakes_1775419566120.png"
+              fill
+              alt="Manutenção de Freios"
+              className="object-cover group-hover:scale-110 transition-transform duration-[5s] ease-out brightness-75 group-hover:brightness-100"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="relative z-20 bg-zinc-950/90 backdrop-blur-xl border border-zinc-800 p-8 md:p-16 rounded-sm -mt-24 lg:mt-0 lg:-ml-12 shadow-2xl"
+            className="relative z-20 bg-zinc-950/90 backdrop-blur-xl border border-zinc-800 p-16 rounded-sm -ml-12 shadow-2xl"
           >
-            <h2 className="text-3xl md:text-5xl font-medium tracking-tighter text-white mb-6">
-              Suspensão <br/><span className="text-zinc-500">e Freios.</span>
-            </h2>
-            <p className="text-zinc-400 text-lg leading-relaxed mb-10">
-              A segurança de condução é indispensável nas vias públicas. Realizamos troca técnica de fluidos e pastilhas originais de cerâmica com sangria profissional.
-            </p>
-
-            <ul className="flex flex-col gap-5 border-t border-zinc-900 pt-8">
-              <li className="flex justify-between items-center">
-                <span className="text-zinc-500 font-mono text-sm tracking-widest uppercase">Fluido</span>
-                <span className="text-white font-mono">Sangria Completa</span>
-              </li>
-              <li className="flex justify-between items-center">
-                 <span className="text-zinc-500 font-mono text-sm tracking-widest uppercase">Reposição</span>
-                <span className="text-white font-mono">Linha Premium OEM</span>
-              </li>
-            </ul>
+            {cardContent}
           </motion.div>
-
         </div>
+
       </div>
     </section>
   );
