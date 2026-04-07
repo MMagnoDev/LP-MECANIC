@@ -65,12 +65,12 @@ function HeroSection() {
       </div>
 
       {/* Content Container */}
-      <div className="max-w-[1400px] mx-auto w-full px-8 md:px-12 lg:px-16 h-full relative z-30 flex flex-col justify-center pt-[10vh] pb-[5vh] min-h-[100dvh]">
+      <div className="max-w-[1400px] mx-auto w-full px-8 md:px-12 lg:px-16 h-full relative z-30 flex flex-col justify-start md:justify-center pt-[22vh] md:pt-[10vh] pb-[5vh] min-h-[100dvh]">
         <motion.div
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
-           className="flex flex-col items-start w-full md:w-[60%] -mt-20 md:mt-0"
+           className="flex flex-col items-start w-full md:w-[60%]"
         >
           {/* Badge */}
           <div className="inline-flex items-center border border-zinc-700/50 rounded-full px-4 py-1 mb-8">
