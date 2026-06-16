@@ -41,7 +41,7 @@ function HeroSection() {
     <section className="relative min-h-[100dvh] w-full flex flex-col justify-center overflow-hidden bg-[#0A0A0A] text-zinc-100">
       
       {/* Background Image coming from the right */}
-      <div className="absolute top-0 right-0 w-full md:w-[65%] h-[100dvh] pointer-events-none">
+      <div className="absolute top-0 right-0 w-full md:w-[65%] h-full pointer-events-none">
         <Image
           src="/imagens/hero.jpg"
           alt="Oberg Garage Hero Image"
@@ -65,12 +65,12 @@ function HeroSection() {
       </div>
 
       {/* Content Container */}
-      <div className="max-w-[1400px] mx-auto w-full px-8 md:px-12 lg:px-16 h-full relative z-30 flex flex-col justify-start md:justify-center pt-[22vh] md:pt-[10vh] pb-[5vh] min-h-[100dvh]">
+      <div className="max-w-[1400px] mx-auto w-full px-8 md:px-12 lg:px-16 relative z-30 flex flex-col justify-start pt-[20vh] md:pt-[16vh] pb-8 min-h-[100dvh]">
         <motion.div
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
-           className="flex flex-col items-start w-full md:w-[60%]"
+           className="flex-1 flex flex-col justify-center items-start w-full md:w-[60%]"
         >
           {/* Badge */}
           <div className="inline-flex items-center border border-zinc-700/50 rounded-full px-4 py-1 mb-8">
@@ -89,7 +89,7 @@ function HeroSection() {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8 mb-12 md:mb-16 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8 mb-6 w-full sm:w-auto">
             <MagneticButton className="bg-white text-black px-8 py-3.5 rounded-sm flex items-center justify-center hover:bg-zinc-200 transition-colors w-full sm:w-auto">
               <span className="font-semibold text-sm tracking-tight">Ver Reparos</span>
             </MagneticButton>
@@ -100,7 +100,7 @@ function HeroSection() {
         </motion.div>
 
         {/* Bottom content */}
-        <div className="absolute bottom-10 left-8 md:left-12 lg:left-16 right-8 md:right-12 lg:right-16 flex flex-col md:flex-row justify-between items-start md:items-end z-20 gap-8">
+        <div className="relative w-full flex flex-col md:flex-row justify-between items-start md:items-end z-20 gap-8 mt-12">
           <div className="flex flex-col">
             <h3 className="text-white text-2xl md:text-3xl font-medium tracking-tight mb-2">Diagnósticos Precisos.</h3>
             <p className="text-zinc-500 font-light text-sm max-w-[40ch]">
