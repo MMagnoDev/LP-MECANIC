@@ -555,14 +555,14 @@ function Footer() {
               <div className="flex flex-col gap-2 mt-4 normal-case tracking-normal font-sans">
                 <span className="text-zinc-600 text-sm">© 2026 OBERG Automotivo.</span>
                 <span className="text-zinc-600 text-xs">
-                  Designed & Developed By{" "}
+                  Feito por{" "}
                   <a 
-                    href="https://magsolutions.space" 
+                    href="https://www.instagram.com/clean.designn/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="text-zinc-200 font-medium hover:text-white transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5"
                   >
-                    Magno
+                    Agencia Clean
                   </a>.
                 </span>
               </div>
